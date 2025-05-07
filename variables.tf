@@ -203,6 +203,17 @@ variable "s3_key_prefix" {
   default     = null
 }
 
+
+variable "s3_kms_key_arn" {
+  type        = string
+  description = <<-DOC
+    (Optional) The ARN of the AWS KMS key used to encrypt objects delivered by AWS Config. Must belong to the same Region as the destination S3 bucket.
+
+
+  DOC
+  default     = null
+}
+
 // Config aggregation isn't enabled for ap-northeast-3, maybe others in the future
 // https://docs.aws.amazon.com/config/latest/developerguide/aggregate-data.html
 variable "disabled_aggregation_regions" {

@@ -39,6 +39,7 @@ resource "aws_config_delivery_channel" "channel" {
   name           = module.aws_config_label.id
   s3_bucket_name = var.s3_bucket_id
   s3_key_prefix  = var.s3_key_prefix
+  s3_kms_key_arn = var.s3_kms_key_arn
   sns_topic_arn  = local.findings_notification_arn
 
   depends_on = [
